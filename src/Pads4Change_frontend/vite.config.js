@@ -4,11 +4,11 @@ import { defineConfig } from 'vite';
 import environment from 'vite-plugin-environment';
 import dotenv from 'dotenv';
 
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: './src/Pads4Change_frontend/.env' });
 
 export default defineConfig({
   build: {
-    emptyOutDir: true,
+    outDir: 'dist',
   },
   optimizeDeps: {
     esbuildOptions: {

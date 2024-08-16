@@ -1,0 +1,5 @@
+[canisters]
+inventory_canister = { main = "src/backend/src/inventory_canister/main.py" }
+school_canister = { main = "src/backend/src/school_canister/main.py" }
+user_canister = { main = "src/backend/src/user_canister/main.py" }
+

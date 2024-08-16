@@ -1,30 +1,24 @@
 {
   "name": "Pads4Change_frontend",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "workspaces": [
+    "src/Pads4Change_frontend",
+    "src/Pads4Change_backend"
+   ],
   "scripts": {
-    "setup": "npm i && dfx canister create Pads4Change_backend && dfx generate Pads4Change_backend && dfx deploy",
-    "start": "vite --port 3000",
-    "prebuild": "dfx generate",
-    "build": "tsc && vite build",
-    "format": "prettier --write \"src/**/*.{json,js,jsx,ts,tsx,css,scss}\""
+    "build": "npm run build --workspace Pads4Change_frontend",
+    "start": "npm run start --workspace Pads4Change_frontend"
+    "start": "vite",
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@dfinity/agent": "^1.4.0",
-    "@dfinity/candid": "^1.4.0",
-    "@dfinity/principal": "^1.4.0"
+    "vite": "^4.5.3"
   },
   "devDependencies": {
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "@vitejs/plugin-react": "^4.0.1",
-    "dotenv": "^16.3.1",
-    "sass": "^1.63.6",
-    "typescript": "^5.1.3",
-    "vite": "^4.3.9",
-    "vite-plugin-environment": "^1.1.3"
+    "typescript": "^4.9.4",
+    "eslint": "^8.39.0"
   }
 }
+

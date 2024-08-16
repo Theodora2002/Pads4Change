@@ -15,7 +15,7 @@ def add_item(item_name: str, quantity: nat) -> bool:
     return True
 
 @update
-def allocate_items(school_id: str, quantity: nat) -> bool:
+def allocate_items(school_id: str, quantity: nat) -> dict[str, bool]:
     if "sanitary_pads" in inventory and inventory["sanitary_pads"].quantity >= quantity:
         inventory["sanitary_pads"].quantity -= quantity
         ic.call_other_canister(
@@ -23,9 +23,10 @@ def allocate_items(school_id: str, quantity: nat) -> bool:
             "receive_items",
             [inventory["sanitary_pads"].item_name, quantity]
         )
-        return True
-    return False
+        return {"success": True}
+    return {"success": False}
 
 @query
 def check_inventory() -> dict[str, InventoryItem]:
     return inventory
+

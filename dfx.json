@@ -1,7 +1,7 @@
 {
   "canisters": {
     "Pads4Change_backend": {
-      "build": "python -m kybra Pads4Change_backend src/Pads4Change_backend/src/main.py src/Pads4Change_backend/Pads4Change_backend.did",
+      "build": "python3 -m kybra Pads4Change_backend src/Pads4Change_backend/src/main.py src/Pads4Change_backend/Pads4Change_backend.did",
       "candid": "src/Pads4Change_backend/Pads4Change_backend.did",
       "gzip": true,
       "post_install": ".kybra/Pads4Change_backend/post_install.sh",
@@ -47,3 +47,4 @@
   "output_env_file": ".env",
   "version": 1
 }
+
